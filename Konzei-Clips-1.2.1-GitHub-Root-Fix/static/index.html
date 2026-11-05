@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#090b13" />
+  <title>Konzei Clips — Your creator studio</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div id="auth-screen" class="auth-screen">
+    <div class="auth-glow"></div>
+    <section class="auth-card" aria-labelledby="auth-title">
+      <div class="auth-logo"><span class="brand-symbol"><span>K</span></span><strong>Konzei<span class="accent-dot">.</span></strong><span class="auth-studio">CLIPS</span></div>
+      <div class="auth-icon">✦</div>
+      <span class="overline">YOUR CREATOR STUDIO</span>
+      <h1 id="auth-title">Create beyond the ordinary.</h1>
+      <p>Sign in securely with Google to open your private workspace. Your profile is never shown publicly.</p>
+      <div id="google-signin-button" class="google-button"></div>
+      <p id="signin-status" class="signin-status" role="status">Connecting to Google sign-in…</p>
+      <div class="auth-privacy">🔒 Private profile · Google password never shared with Konzei<br>Sign-in stores your name, email, Google account ID and profile picture on this server.</div>
+    </section>
+    <small class="auth-built">DESIGNED & BUILT BY KONZEI · INDEPENDENT CREATOR PLATFORM</small>
+  </div>
+  <div class="app-shell auth-locked">
+    <aside class="sidebar">
+      <div class="identity"><div class="brand-symbol"><span>K</span></div><div class="brand-text"><strong>Konzei<span class="accent-dot">.</span></strong><small>CLIPS STUDIO</small></div></div>
+      <div class="workspace-tag"><span class="avatar-mini">K</span><span><strong>My Workspace</strong><small>Creator workspace</small></span><span class="workspace-check">✓</span></div>
+      <div class="nav-label">WORKSPACE</div>
+      <nav class="sidebar-nav" aria-label="Main navigation">
+        <button class="nav-link active" data-view="home"><span class="nav-ico">▦</span><span>Overview</span></button>
+        <button class="nav-link" data-view="projects"><span class="nav-ico">▣</span><span>My projects</span><span id="project-count" class="nav-count">0</span></button>
+        <button class="nav-link" data-view="recipes"><span class="nav-ico">◈</span><span>My recipes</span></button>
+      </nav>
+      <div id="owner-nav" class="owner-nav" hidden><div class="nav-label nav-label-second">OWNER ACCESS</div><nav class="sidebar-nav"><button class="nav-link" data-view="owner"><span class="nav-ico">♛</span><span>Owner dashboard</span><span class="owner-gem">✦</span></button></nav></div>
+      <div class="nav-label nav-label-second">STUDIO</div>
+      <nav class="sidebar-nav" aria-label="Studio actions">
+        <button class="nav-link" id="new-project"><span class="nav-ico">⊕</span><span>New project</span></button>
+        <button class="nav-link" data-view="settings"><span class="nav-ico">⚙</span><span>Preferences</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="mini-gradient"><span class="mini-sparkle">✦</span><strong>Unlimited creativity.</strong><p>Make as many clips as your computer can handle.</p><span>YOUR PRIVATE WORKSPACE</span></div>
+        <div class="sidebar-profile"><span class="avatar-large" id="profile-initial">K</span><span><strong id="profile-name">Creator</strong><small id="profile-role">Member</small></span><span class="online-dot"></span></div>
+      </div>
+    </aside>
+    <div class="content-shell">
+      <header class="topbar"><div class="topbar-left"><span class="breadcrumb-home">WORKSPACE</span><span class="breadcrumb-arrow">/</span><span id="breadcrumb">Overview</span></div><div class="topbar-right"><span id="engine-status" class="engine-status"><i></i> Checking engine</span><button class="help-button" title="Information" data-view="settings">?</button><button id="sign-out" type="button" class="btn btn-sm btn-quiet signout" title="Sign out of your Konzei account">Sign out</button><span class="top-avatar" id="top-avatar">K</span></div></header>
+      <main class="main-content" id="main"><div class="loading"><span class="spinner"></span> Opening your studio…</div></main>
+    </div>
+  </div>
+  <div id="toast-area" role="status" aria-live="polite"></div>
+  <div class="job-overlay hidden" id="job-overlay"><div class="job-card"><div class="job-orbit"><span class="spinner"></span></div><span id="job-kind" class="overline">PROCESSING</span><h2 id="job-label">Working on your video</h2><p id="job-message">Preparing…</p><div class="progress-track"><div id="job-bar"></div></div><div class="job-foot"><span>Processing by Konzei Clips</span><span id="job-percent">0%</span></div></div></div>
+  <input id="file-picker" type="file" accept="video/mp4,video/quicktime,video/webm,video/x-matroska,video/*" hidden />
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
