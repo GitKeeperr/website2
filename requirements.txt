@@ -1,0 +1,8 @@
+fastapi>=0.115,<1
+uvicorn>=0.30,<1
+python-multipart>=0.0.9
+numpy>=1.26
+opencv-python-headless>=4.8
+yt-dlp
+# Optional enhanced speech transcription: pip install faster-whisper
+google-auth>=2.35,<4
