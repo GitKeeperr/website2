@@ -9,6 +9,9 @@ COPY requirements.txt /app/requirements.txt
 RUN python -m pip install --no-cache-dir --upgrade pip \
     && python -m pip install --no-cache-dir -r /app/requirements.txt
 COPY . /app
+RUN test -f /app/static/index.html \
+ && test -f /app/static/app.js \
+ && test -f /app/static/style.css
 RUN mkdir -p /app/data
 EXPOSE 8765
 CMD ["sh", "-c", "exec uvicorn app:app --host 0.0.0.0 --port ${PORT:-8765} --workers 1"]
